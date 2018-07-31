@@ -1,0 +1,22 @@
+/*
+* @Author: Miao
+* @Date:   2018-07-31 18:30:41
+* @Last Modified by:   Miao
+* @Last Modified time: 2018-07-31 18:35:25
+*/
+.footer{
+    padding-bottom: 10px;
+}
+.footer .links{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+    padding: 0 10px;
+}
+.footer .copyright{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
