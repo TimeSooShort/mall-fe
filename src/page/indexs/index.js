@@ -2,9 +2,11 @@
 * @Author: Miao
 * @Date:   2018-07-29 00:57:17
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-07-31 18:02:50
+* @Last Modified time: 2018-08-01 17:16:38
 */
 'use strict';
-require('../common/nav/index.js');
 var _mm = require('util/mm.js');
-
+require('page/common/header/index.js');
+require('page/common/nav/index.js');
+var navSide = require('page/common/nav-side/index.js');
+navSide.init({name : 'about'});

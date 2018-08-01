@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-29 01:03:01
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-07-31 16:48:15
+* @Last Modified time: 2018-08-01 17:05:41
 */
 var webpack = require('webpack');
 var Ex      = require('extract-text-webpack-plugin');
@@ -41,6 +41,7 @@ var config = {
         loaders: [
             { test: /\.css$/, loader: Ex.extract('style-loader', 'css-loader')},
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=images/[name].[ext]'},
+            { test: /\.string$/, loader : 'html-loader'}
         ]
     },
     resolve : {
