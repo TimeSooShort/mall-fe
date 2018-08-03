@@ -2,11 +2,10 @@
 * @Author: Miao
 * @Date:   2018-08-01 14:50:38
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 17:16:48
+* @Last Modified time: 2018-08-03 19:55:10
 */
 /* 导航主体 */
 .nav-side{
-    margin-left: 60px;
     float: left;
     width: 130px;
     min-height: 100px;
