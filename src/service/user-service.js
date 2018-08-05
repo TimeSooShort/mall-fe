@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 19:24:13
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 00:28:15
+* @Last Modified time: 2018-08-05 13:57:40
 */
 'use strict';
 
@@ -28,7 +28,7 @@ var _user = {
                 str    : username
             },
             method  : 'POST',
-            succes  : resolve,
+            success  : resolve,
             error   : reject
         });
     },
