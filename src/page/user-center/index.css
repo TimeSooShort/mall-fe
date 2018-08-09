@@ -1,0 +1,16 @@
+/*
+* @Author: Miao
+* @Date:   2018-08-05 23:15:18
+* @Last Modified by:   Miao
+* @Last Modified time: 2018-08-09 10:47:37
+*/
+.form-line{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.form-line .lable{
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}

@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-29 21:24:59
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-05 02:32:09
+* @Last Modified time: 2018-08-09 14:46:54
 */
 'use strict';
 require('./index.css');
@@ -49,7 +49,7 @@ var page = {
         // 验证成功
         if (validateResult.status) {
             _user.login(formData, function(res){
-                window.location.href = _mm.getUrlParam('redirect') || './index.html';
+                window.location.href = _mm.getUrlParam('redirect') || './indexs.html';
             }, function(errMsg){
                 formError.show(errMsg);
             });

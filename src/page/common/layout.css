@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 15:52:18
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-07-31 17:42:37
+* @Last Modified time: 2018-08-09 10:47:35
 */
 /* css reset*/
 *{
@@ -32,6 +32,24 @@ input[type='checkbox']{
     width: 1080px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
+}
+
+/* panel */
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
     overflow: hidden;
 }
 

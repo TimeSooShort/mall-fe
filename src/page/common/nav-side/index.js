@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-01 14:39:12
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 17:14:42
+* @Last Modified time: 2018-08-09 14:53:35
 */
 'use strict';
 require('./index.css');
@@ -15,8 +15,8 @@ var navSide = {
         navList : [
             {name : 'user-center', desc : '个人中心', href : './user-center.html'},
             {name : 'order-list', desc : '我的订单', href : './order-list.html'},
-            {name : 'user-pass-word', desc : '修改密码', href : './user-pass-update.html'},
-            {name : 'about', desc : '关于Shooooping!', href : './user-center.html'}
+            {name : 'user-pass-update', desc : '修改密码', href : './user-pass-update.html'},
+            {name : 'about', desc : '关于Shooooping!', href : './about.html'}
         ]
     },
     init : function(option) {
