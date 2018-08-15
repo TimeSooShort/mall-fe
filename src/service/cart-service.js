@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 19:24:45
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 00:50:04
+* @Last Modified time: 2018-08-15 19:08:30
 */
 'use strict';
 
@@ -27,7 +27,7 @@ var _cart = {
         });
     },
     // 获取购物车列表
-    addToCart : function(resolve, reject){
+    getCartList : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/list.do'),
             success : resolve,

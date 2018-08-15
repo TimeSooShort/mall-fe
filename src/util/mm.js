@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-30 18:17:16
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-04 17:58:13
+* @Last Modified time: 2018-08-15 19:15:27
 */
 'use strict';
 var Hogan = require('hogan.js');
@@ -82,7 +82,7 @@ var _mm = {
         window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome : function(){
-        window.location.href = './index.html';
+        window.location.href = './indexs.html';
     }
 };
 
