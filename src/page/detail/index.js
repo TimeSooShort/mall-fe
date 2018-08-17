@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-13 14:03:11
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-15 20:08:08
+* @Last Modified time: 2018-08-17 11:42:03
 */
 'use strict';
 
@@ -16,7 +16,7 @@ var templateIndex   = require('./index.string');
 
 var page = {
     data : {
-        productId : _mm.getUrlParam('productId') || '',
+        productId : _mm.getUrlParam('productId') || ''
     },
     init : function(){
         this.onLoad();

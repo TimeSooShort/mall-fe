@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-29 01:03:01
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-13 14:02:00
+* @Last Modified time: 2018-08-17 18:50:32
 */
 var webpack = require('webpack');
 var Ex      = require('extract-text-webpack-plugin');
@@ -36,6 +36,8 @@ var config = {
         'user-center-update': ['./src/page/user-center-update/index.js'],
         'result'            : ['./src/page/result/index.js'],
         'list'              : ['./src/page/list/index.js'],
+        'cart'              : ['./src/page/cart/index.js'],
+        'order-confirm'     : ['./src/page/order-confirm/index.js'],
         'detail'            : ['./src/page/detail/index.js']
     },
     output: {
@@ -80,6 +82,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
     ]
 };

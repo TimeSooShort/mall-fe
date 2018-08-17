@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 19:24:45
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-15 19:08:30
+* @Last Modified time: 2018-08-17 12:25:43
 */
 'use strict';
 
@@ -73,10 +73,10 @@ var _cart = {
         });
     },
     // 更新购物车商品数量
-    updateProduct : function(productInfo, reject){
+    updateProduct : function(productInfo, resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/update.do'),
-            date    : productInfo,
+            data    : productInfo,
             success : resolve,
             error   : reject 
         });
