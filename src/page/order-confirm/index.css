@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-17 19:21:50
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-17 20:46:29
+* @Last Modified time: 2018-08-20 20:22:49
 */
 /*商品清单部分*/
 .product-table{
@@ -61,6 +61,7 @@
     text-align: center;
 }
 /*地址*/
+.address-add,
 .address-item{
     margin: 20px 20px 0 0;
     padding: 5px 8px;
@@ -99,14 +100,95 @@
 .address-item .address-opera .link{
     margin-right: 5px;
 }
-.address-item .address-new{
+.address-add .address-new{
     padding: 8px 0;
     text-align: center;
     color: #ccc;
 }
-.address-item .address-new .fa{
+.address-add .address-new .fa{
     font-size: 50px;
 }
-.address-item .address-new .text{
+.address-add .address-new .text{
     font-size: 12px;
+}
+/*modal*/
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal .modal-container{
+    width: 600px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 4px;
+}
+.modal .modal-header{
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+.modal .modal-header .modal-title{
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.modal .modal-header .close{
+    position: absolute;
+    font-size: 16px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    color: #ccc;
+}
+.modal .modal-header .close:hover{
+    color: #000;
+}
+.modal .modal-body{
+    padding: 15px;
+}
+/*form*/
+.form .form-line{
+    margin: 5px 0;
+    overflow: hidden;
+}
+.form .form-line .label{
+    display: block;
+    float: left;
+    width: 80px;
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.form .form-line .form-item{
+    padding: 0 5px;
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+    outline: none;
+    margin-right: 10px;
+}
+.form .form-line .form-item-select{
+    padding: 0 5px;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    outline: none;
+    margin-right: 10px;
+}
+.form .form-line .address-btn{
+    margin-left: 90px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
 }

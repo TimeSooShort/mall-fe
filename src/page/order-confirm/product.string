@@ -14,7 +14,7 @@
             </a>
         </td>
         <td class="cell-info">
-            <a href="./detail.html?productId={{productId}}" target="_blank">
+            <a class="link" href="./detail.html?productId={{productId}}" target="_blank">
                 {{productName}}
             </a>
         </td>

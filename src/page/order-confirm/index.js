@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-17 19:21:32
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-17 22:00:49
+* @Last Modified time: 2018-08-20 19:30:41
 */
 'use strict';
 require('./index.css');
@@ -11,6 +11,7 @@ require('page/common/nav/index.js');
 var _mm             = require('util/mm.js');
 var _address        = require('service/address-service.js');
 var _order          = require('service/order-service.js');
+var addressModal    = require('./address-modal.js');
 var templatePro     = require('./product.string');
 var templateAds     = require('./address.string');
 
@@ -31,11 +32,63 @@ var page = {
     bindEvent : function(){
         var _this = this;
         // 收货地址的选中
-        $(document).on('click', 'address-item', function(){
+        $(document).on('click', '.address-item', function(){
             var $this = $(this);
             $this.addClass('active').siblings('.address-item')
             .removeClass('active');
             _this.data.selectedAddressId = $this.data('id');
+        });
+        //订单提交
+        $(document).on('click', '.order-submit', function(){
+            if (_this.data.selectedAddressId) {
+                _order.createOrderNum({
+                    shippingId : _this.data.selectedAddressId
+                }, function(res){
+                    window.location.href = './payment.html?orderNumber='+res.orderNo;
+                }, function(errMsg){
+                    _mm.errorTips(errMsg);
+                });
+            }
+            else{
+                _mm.errorTips('请选择收货地址');
+            }
+        });
+        // 地址添加
+        $(document).on('click', '.address-add', function(){
+            addressModal.show({
+                isUpdate   : false,
+                onSuccess  : function(){
+                    _this.loadAddress();
+                }
+            });
+        });
+        //编辑地址
+        $(document).on('click', '.address-update', function(e){
+            e.stopPropagation();
+            var shippingId = $(this).parents('.address-item').data('id');
+            _address.getReceiverInfo(shippingId, function(res){
+                addressModal.show({
+                    isUpdate  : true,
+                    data      : res,
+                    onSuccess : function(){
+                        _this.loadAddress();
+                    }
+                });
+            }, function(errMsg){
+                _mm.errorTips(errMsg);
+            });
+        });
+        // 地址删除
+        $(document).on('click', '.address-delete', function(e){
+            e.stopPropagation();
+            var id = $(this).parents('.address-item').data('id');
+            if (window.confirm('确认要删除该地址?')) {
+                _address.delete(id, function(res){
+                    _this.loadAddress();
+                }, function(errMsg){
+                    _mm.errorTips(errMsg);
+                });
+            }
         });
     },
     // 加载地址

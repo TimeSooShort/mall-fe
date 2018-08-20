@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-17 19:05:48
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-17 22:02:36
+* @Last Modified time: 2018-08-18 11:58:37
 */
 'use strict';
 
@@ -39,15 +39,6 @@ var _order = {
         _mm.request({
             url     : _mm.getServerUrl('/order/detail.do'),
             data    : orderNo,
-            success : resolve,
-            error   : reject
-        });
-    },
-    //取消订单
-    cancelOrder  : function(orderNo, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/order/get_order_cart_product.do'),
-            data    : 
             success : resolve,
             error   : reject
         });
