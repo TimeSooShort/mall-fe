@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 18:01:57
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 16:01:34
+* @Last Modified time: 2018-09-07 19:34:41
 */
 'use strict';
 require('./index.css');
@@ -11,7 +11,7 @@ var _user = require('service/user-service.js');
 var _cart = require('service/cart-service.js');
 // 导航
 var nav = {
-    init : function (argument) {
+    init : function () {
         this.bindEvent();
         this.loadUserInfo();
         this.loadCartCount();
@@ -64,5 +64,4 @@ var nav = {
         );
     }
 };
-
 module.exports = nav.init();

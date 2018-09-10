@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-17 19:05:48
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-18 11:58:37
+* @Last Modified time: 2018-09-10 02:59:02
 */
 'use strict';
 
@@ -38,7 +38,42 @@ var _order = {
     getOrderDetail  : function(orderNo, resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/order/detail.do'),
-            data    : orderNo,
+            data    : {
+                orderNo : orderNo
+            },
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 取消订单
+    cancelOrder : function(orderNumber, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/cancel.do'),
+            data    : {
+                orderNo : orderNumber
+            },
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 获取支付信息
+    getPaymentInfo : function(orderNumber, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/pay.do'),
+            data    : {
+                orderNum : orderNumber
+            },
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 获取支付状态
+    getPaymentStatus : function(orderNumber, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/query_order_pay_status.do'),
+            data    : {
+                orderNo : orderNumber
+            },
             success : resolve,
             error   : reject
         });

@@ -21,9 +21,20 @@
             <%= require('html-loader!./layout/nav-side.html') %>
             <div class="content with-nav">
                 <div class="panel">
-                    <div class="panel-title">修改个人信息</div>
+                    <div class="panel-title"><%= htmlWebpackPlugin.options.title%></div>
                     <div class="panel-body">
-                        <div class="loading"></div>
+                        <div class="links">
+                            <a class="link" href="https://github.com/TimeSooShort" target="_blank">
+                                <p class="about">我的GitHub</p>
+                            </a>
+                            <a class="link" href="https://blog.csdn.net/sinat_34976604" target="_blank">
+                                <p class="about">我的博客</p>
+                            </a>
+                            <a class="link" href="https://github.com/TimeSooShort/mall_project" target="_blank"><p class="about">项目后端代码地址</p>
+                            </a>
+                            <a class="link" href="https://github.com/TimeSooShort/mall-fe" target="_blank"><p class="about">项目前端代码地址</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

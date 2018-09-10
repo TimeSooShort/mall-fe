@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-15 23:51:36
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-17 18:49:07
+* @Last Modified time: 2018-09-07 20:39:05
 */
 'use strict';
 
@@ -115,7 +115,7 @@ var page = {
             }
             else if (window.confirm('确认要删除选中商品？')) {
                 var productIds = [];
-                for (let i = 0; i < $selectedItem.length; i++) {
+                for (var i = 0; i < $selectedItem.length; i++) {
                     productIds.push($($selectedItem[i])
                         .parents('.cart-table').data('product-id'));
                 }
@@ -126,7 +126,7 @@ var page = {
                 }
             }
         });
-        // 加载购物车信息
+        // 提交
         $(document).on('click', '.btn-submit', function(){
             // 确保选中商品再进行提交
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
@@ -168,7 +168,7 @@ var page = {
     },
     // 数据校验
     filter : function(data){
-        data.notEmpty = !!data.cartProductVoList.length;
+        data.notEmpty = !!data.cartProductVOList.length;
     },
     // 错误信息显示
     showCartError : function(){

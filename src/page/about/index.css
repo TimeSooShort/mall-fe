@@ -1,0 +1,15 @@
+/*
+* @Author: Miao
+* @Date:   2018-09-10 14:56:09
+* @Last Modified by:   Miao
+* @Last Modified time: 2018-09-10 15:30:52
+*/
+.links{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.links .link .about{
+    font-size: 20px;
+    font-weight: 700;
+}

@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-08-05 14:13:10
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-05 17:28:18
+* @Last Modified time: 2018-09-10 01:46:29
 */
 /*
 * @Author: Miao
@@ -13,7 +13,6 @@
 'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js');
-var _mm = require('util/mm.js');
 var _user = require('service/user-service.js');
 
 // 根据验证结果来决定是否显示错误提示
@@ -123,7 +122,7 @@ var page = {
             _user.resetPassword({
                 // 重置密码
                 username    : _this.data.username,
-                passwordNew : password,
+                newPassword : password,
                 forgetToken : _this.data.token
             }, function(res){
                 window.location.href = './result.html?type=pass-reset';

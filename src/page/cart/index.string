@@ -22,17 +22,17 @@
     </table>
 </div>
 <div class="cart-list">
-    {{#cartProductVoList}}
+    {{#cartProductVOList}}
     <table class="cart-table" data-product-id='{{productId}}'>
         <tr>
             <td class="cart-cell cell-check">
                 <lable class="cart-lable">
-                    {{#productChecked}}
+                    {{#checked}}
                     <input class="cart-select" type="checkbox" checked></input>
-                    {{/productChecked}}
-                    {{^productChecked}}
+                    {{/checked}}
+                    {{^checked}}
                     <input class="cart-select" type="checkbox"></input>
-                    {{/productChecked}}
+                    {{/checked}}
                 </lable>
             </td>
             <td class="cart-cell cell-img">
@@ -55,7 +55,7 @@
             </td>
         </tr>
     </table>
-    {{/cartProductVoList}}
+    {{/cartProductVOList}}
 </div> 
 <div class="cart-footer">
     <div class="select-con">

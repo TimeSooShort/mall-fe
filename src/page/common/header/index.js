@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-31 18:57:56
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-01 14:16:12
+* @Last Modified time: 2018-09-07 19:36:20
 */
 'use strict';
 require('./index.css');
@@ -47,5 +47,4 @@ var header = {
         }
     }
 };
-
 header.init();

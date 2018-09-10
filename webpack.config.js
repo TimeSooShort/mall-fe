@@ -2,7 +2,7 @@
 * @Author: Miao
 * @Date:   2018-07-29 01:03:01
 * @Last Modified by:   Miao
-* @Last Modified time: 2018-08-20 20:29:35
+* @Last Modified time: 2018-09-10 15:10:52
 */
 var webpack = require('webpack');
 var Ex      = require('extract-text-webpack-plugin');
@@ -17,6 +17,7 @@ var getHtmlConfig = function(name, title) {
     return {
         template : './src/view/' + name + '.html',
         filename : 'view/' + name +'.html',
+        favicon  : './favicon.ico',
         title    : title,
         inject   : true,
         hash     : true,
@@ -39,12 +40,15 @@ var config = {
         'cart'              : ['./src/page/cart/index.js'],
         'order-confirm'     : ['./src/page/order-confirm/index.js'],
         'order-list'        : ['./src/page/order-list/index.js'],
-        'detail'            : ['./src/page/detail/index.js']
+        'order-detail'      : ['./src/page/order-detail/index.js'],
+        'detail'            : ['./src/page/detail/index.js'],
+        'about'             : ['./src/page/about/index.js'],
+        'payment'           : ['./src/page/payment/index.js']
     },
     output: {
-        path: './dist',
-        publicPath : '/dist',
-        filename: 'js/[name].js'
+        path       :__dirname + '/dist/',
+        publicPath : 'dev_win' == WEBPACK_ENV ? '/dist/' : '//s.miaoshop.top/mall-fe/dist/',
+        filename   : 'js/[name].js'
     },
     externals : {
         'jquery' : 'window.jQuery'
@@ -53,7 +57,14 @@ var config = {
         loaders: [
             { test: /\.css$/, loader: Ex.extract('style-loader', 'css-loader')},
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=images/[name].[ext]'},
-            { test: /\.string$/, loader : 'html-loader'}
+            { 
+                test: /\.string$/, 
+                loader : 'html-loader',
+                query  : {
+                    minimize : true,
+                    removeAttributeQuotes : false
+                }
+            }
         ]
     },
     resolve : {
@@ -86,7 +97,10 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
         new HtmlWebpackPlugin(getHtmlConfig('order-list', '我的订单')),
-        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
+        new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于本网站')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付'))
     ]
 };
 
